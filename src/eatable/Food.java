@@ -12,12 +12,20 @@ public class Food {
     }
     protected ArrayList<Food> MainDish;
 
-    int countKcal(){
-
+    public static int TotalKcal(ArrayList<Food> MainDish){
+        int totalKcal = 0;
         for(int i = 0; i<MainDish.size(); i++){
-
+            totalKcal+=MainDish.get(i).kcal;
         }
-        return kcal;
+        return totalKcal;
+    }
+
+    public static double TotalWeight(ArrayList<Food> MainDish){
+        double totalWeight = 0.0;
+        for(int i = 0; i<MainDish.size(); i++){
+            totalWeight+=MainDish.get(i).weight;
+        }
+        return totalWeight;
     }
 
 }

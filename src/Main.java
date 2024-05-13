@@ -1,9 +1,6 @@
-import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter your weight in kilograms ");
-
-        int weight  = scanner.nextInt();
+        AmericanBreakfast t = new AmericanBreakfast();
+        t.serving();
     }
 }
