@@ -6,11 +6,13 @@ public class Liquid {
     protected String bevarage;
     protected int kcal;
     protected int mililiters;
+    protected int density;
 
-    public Liquid(String bevarage, int kcal, int mililiters) {
+    public Liquid(String bevarage, int kcal, int mililiters, int density) {
         this.bevarage = bevarage;
         this.kcal = kcal;
         this.mililiters = mililiters;
+        this.density = density;
     }
 
     public static int TotalKcal(Liquid beverage){
@@ -18,6 +20,6 @@ public class Liquid {
     }
 
     public static int TotalWeight(Liquid beverage){
-        return beverage.mililiters;
+        return beverage.mililiters*beverage.density;
     }
 }
