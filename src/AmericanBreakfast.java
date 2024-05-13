@@ -27,6 +27,8 @@ public class AmericanBreakfast extends Breakfast {
         amountKcal += Liquid.TotalKcal(Coke);
         amountweight += Liquid.TotalWeight(Coke);
         System.out.println("Prepared your American breakfast which contains "+ amountKcal+" kkcal "+" and total weight "
-                + amountweight+" g");
+                + amountweight+" g and beverage");
     }
 }
+
+
