@@ -30,5 +30,4 @@ public class EuropeBreakfast extends Breakfast {
         System.out.println("Prepared your American breakfast which contains "+ amountKcal+" kkcal "+" and total weight "
                 + amountweight+" g and beverage");
     }
-    }
 }
