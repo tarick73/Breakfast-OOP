@@ -3,18 +3,32 @@ import eatable.*;
 import java.util.ArrayList;
 
 
-public class EuropeBreakfast {
+public class EuropeBreakfast extends Breakfast {
     ArrayList<Food> MainDish=new ArrayList<>();
-    Liquid OrangeJuice = new Liquid("Orange Juice",210, 500, 1);
+    Liquid OrangeJuice = new Liquid("Orange Juice",112, 500, 1);
     public EuropeBreakfast(){
-        Food egg = new Food("Egg",185, 120);
-        MainDish.add(egg);
+        Food croissants = new Food("Croissants",463, 140);
+        MainDish.add(croissants);
 
         Food bacon = new Food("Bacon",172, 13.36);
         MainDish.add(bacon);
 
-        Food pancakes = new Food("Pancakes",172, 13.36);
-        MainDish.add(pancakes);
+        Food cheese = new Food("Cheese",200, 50);
+        MainDish.add(cheese);
 
+    }
+
+    @Override
+    public void serving() {
+        int amountKcal=0;
+        amountKcal=Food.TotalKcal(MainDish);
+        double amountweight=0;
+        amountweight=Food.TotalWeight(MainDish);
+
+        amountKcal += Liquid.TotalKcal(OrangeJuice);
+        amountweight += Liquid.TotalWeight(OrangeJuice);
+        System.out.println("Prepared your American breakfast which contains "+ amountKcal+" kkcal "+" and total weight "
+                + amountweight+" g and beverage");
+    }
     }
 }
