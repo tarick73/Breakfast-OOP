@@ -1,22 +1,21 @@
 package eatable;
 
-import java.util.ArrayList;
-
 public class Liquid {
-    protected String bevarage;
-    protected int kcal;
-    protected int mililiters;
-    protected int density;
+    private final String beverage;
+    private final int kcal;
+    private final int milliliters;
+    private final int density;
 
-    public Liquid(String bevarage, int kcal, int mililiters, int density) {
-        this.bevarage = bevarage;
+    public Liquid(String beverage, int kcal, int milliliters, int density) {
+        this.beverage = beverage;
         this.kcal = kcal;
-        this.mililiters = mililiters;
+        this.milliliters = milliliters;
         this.density = density;
     }
 
-    public String getBevarage() {
-        return bevarage;
+    @Override
+    public String toString() {
+        return beverage;
     }
 
     public static int TotalKcal(Liquid beverage){
@@ -24,6 +23,6 @@ public class Liquid {
     }
 
     public static int TotalWeight(Liquid beverage){
-        return beverage.mililiters*beverage.density;
+        return beverage.milliliters *beverage.density;
     }
 }

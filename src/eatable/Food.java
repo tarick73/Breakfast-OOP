@@ -1,29 +1,29 @@
 package eatable;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Food {
-    protected String name;
-    protected int kcal;
-    protected double weight;
+    private final String name;
+    private final int kcal;
+    private final double weight;
     public Food(String name, int kcal, double weight) {
         this.name = name;
         this.kcal = kcal;
         this.weight = weight;
     }
-    protected ArrayList<Food> MainDish;
 
-    public static int TotalKcal(ArrayList<Food> MainDish){
+    public static int TotalKcal(List<Food> MainDish){
         int totalKcal = 0;
-        for(int i = 0; i<MainDish.size(); i++){
-            totalKcal+=MainDish.get(i).kcal;
+        for (Food mainDish : MainDish) {
+            totalKcal += mainDish.kcal;
         }
         return totalKcal;
     }
 
-    public static double TotalWeight(ArrayList<Food> MainDish){
+    public static double TotalWeight(List<Food> MainDish){
         double totalWeight = 0.0;
-        for(int i = 0; i<MainDish.size(); i++){
-            totalWeight+=MainDish.get(i).weight;
+        for (Food mainDish : MainDish) {
+            totalWeight += mainDish.weight;
         }
         return totalWeight;
     }

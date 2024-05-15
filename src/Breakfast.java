@@ -1,4 +1,4 @@
-public abstract class Breakfast {
-    public void serving(){}
+public interface Breakfast {
+    void serving();
 }
 

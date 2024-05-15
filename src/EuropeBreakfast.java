@@ -1,12 +1,16 @@
 import eatable.*;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
-public class EuropeBreakfast extends Breakfast {
-    ArrayList<Food> MainDish=new ArrayList<>();
-    Liquid OrangeJuice  = new Liquid("Orange Juice",112, 500, 1);
+public class EuropeBreakfast implements Breakfast {
+    List<Food> MainDish;
+    Liquid OrangeJuice;
     public EuropeBreakfast(){
+        MainDish = new ArrayList<>();
+        OrangeJuice=new Liquid("Orange Juice",112, 500, 1);
+
         Food croissants = new Food("Croissants",463, 140);
         MainDish.add(croissants);
 
@@ -23,14 +27,14 @@ public class EuropeBreakfast extends Breakfast {
     @Override
     public void serving() {
 
-        int amountKcal=0;
+        int amountKcal;
         amountKcal=Food.TotalKcal(MainDish);
-        double amountweight=0;
+        double amountweight;
         amountweight=Food.TotalWeight(MainDish);
 
         amountKcal += Liquid.TotalKcal(OrangeJuice);
         amountweight += Liquid.TotalWeight(OrangeJuice);
         System.out.println("Prepared your Europe Breakfast which contains "+ amountKcal+" kkcal "+" and total weight "
-                + amountweight+" g and beverage "+ OrangeJuice.getBevarage());
+                + amountweight+" g and beverage "+ OrangeJuice);
     }
 }
