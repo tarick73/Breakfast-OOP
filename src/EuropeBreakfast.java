@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class EuropeBreakfast extends Breakfast {
     ArrayList<Food> MainDish=new ArrayList<>();
-    Liquid OrangeJuice = new Liquid("Orange Juice",112, 500, 1);
+    Liquid OrangeJuice  = new Liquid("Orange Juice",112, 500, 1);
     public EuropeBreakfast(){
         Food croissants = new Food("Croissants",463, 140);
         MainDish.add(croissants);
@@ -18,8 +18,11 @@ public class EuropeBreakfast extends Breakfast {
 
     }
 
+
+
     @Override
     public void serving() {
+
         int amountKcal=0;
         amountKcal=Food.TotalKcal(MainDish);
         double amountweight=0;
@@ -27,7 +30,7 @@ public class EuropeBreakfast extends Breakfast {
 
         amountKcal += Liquid.TotalKcal(OrangeJuice);
         amountweight += Liquid.TotalWeight(OrangeJuice);
-        System.out.println("Prepared your American breakfast which contains "+ amountKcal+" kkcal "+" and total weight "
-                + amountweight+" g and beverage");
+        System.out.println("Prepared your Europe Breakfast which contains "+ amountKcal+" kkcal "+" and total weight "
+                + amountweight+" g and beverage "+ OrangeJuice.getBevarage());
     }
 }

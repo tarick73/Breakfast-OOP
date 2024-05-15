@@ -15,6 +15,10 @@ public class Liquid {
         this.density = density;
     }
 
+    public String getBevarage() {
+        return bevarage;
+    }
+
     public static int TotalKcal(Liquid beverage){
         return beverage.kcal;
     }
